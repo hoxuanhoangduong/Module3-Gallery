@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {ImageGalleryModule} from './image-gallery/image-gallery.module';
+import {GalleryConfig} from './image-gallery/token';
 
 @NgModule({
   declarations: [
@@ -10,9 +11,11 @@ import {ImageGalleryModule} from './image-gallery/image-gallery.module';
   ],
   imports: [
     BrowserModule,
-    ImageGalleryModule
+    ImageGalleryModule,
   ],
-  providers: [],
+  providers: [
+    {provide: GalleryConfig, useValue: 3}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
